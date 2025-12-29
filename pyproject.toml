@@ -1,0 +1,21 @@
+[project]
+name = "pycalc"
+version = "0.1.0"
+description = "A simple calculator using uv"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# THIS is critical for a src layout
+[tool.hatch.build.targets.wheel]
+packages = ["src/calculator"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.10",
+]
